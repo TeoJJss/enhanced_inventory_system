@@ -1,11 +1,7 @@
 import pandas as pd
 
+# Register new user into the record
 def add_user(role:str) -> None: 
-    # Assume that username should be unique
-    # Assume user's password must be minimum 8 in length
-    # Assume there are only 3 roles that will use the system, which are "admin", "inventory-checker" and "purchaser" 
-    # Assume that "userdata.txt" is placed in the same directory as this file
-
     # Initialization
     file_dir="userdata.csv"
     user_info=""

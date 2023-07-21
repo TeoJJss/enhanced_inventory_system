@@ -1,11 +1,8 @@
 import pandas as pd
 from helpers.helper import inventory_data_list
 
+# Insert new items
 def insert_item(role:str) -> None:
-    # Assume item code's format is 5-digit number and unique
-    # Assume that "inventory.txt" is placed in the same directory as this file
-    # Assume that price must be in 2 decimal format
-
     print("\nYou are now at: ▶ Insert Items (Admin only) ◀")
     file_dir="inventory.csv"
     # Initialize
@@ -98,13 +95,8 @@ def insert_item(role:str) -> None:
 
     print("\nEXIT insert item function")
 
+# Update details of items
 def update_item(role:str) -> None:
-    # Assume item code's format is 5-digit numbers and unique
-    # Assume that "inventory.txt" is placed in the same directory as this file
-    # Assume that price must be in 2 decimal format
-    # Assume that the data entered accurately reflects the actual situation
-    # Validation on the format of the data only, not the reliability
-
     # Initialization
     file_dir="inventory.csv" # Locate the txt file directory
     access_allowed=("admin",) # Only admin can add new user
@@ -233,11 +225,8 @@ def update_item(role:str) -> None:
                 continue
     print("\nEXIT update item function")
 
+# Delete items
 def delete_item(role:str) -> None:
-    # Assume item code's format is 5-digit numbers and unique
-    # Assume "inventory.txt" is placed in the same directory as code file
-    # Assume that only item code can be accepted as input
-
     # Initialization
     file_dir = "inventory.csv"
     access_allowed = ["admin"] #Only admins allowed to access this function

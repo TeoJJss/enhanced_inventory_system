@@ -4,9 +4,8 @@ from services.define import *
 from services.mani import *
 from services.users import *
 
+# Main controller function
 def main() -> None: 
-    # Assume that the "End of business day" is after 8pm, Mon-Sun
-
     role=""
     auto=True
     # Access control
@@ -19,19 +18,19 @@ def main() -> None:
     # Welcome message
     print("\nWelcome to ▶ GROCERY STORE INVENTORY SYSTEM ◀\n")
     while True:
-        # Authentication
+        # Login
         if not role:
             role=user_authentication()
             auto=True
         
         if auto: # This should only do one time for each login
-            # If user is inventory checker and the time is end of business day
+            # If user is inventory checker and the time is end of business day, execute stock taking automatically
             if role=="inventory-checker" and int(datetime.now().strftime("%H"))>=20:
                 print("\nYou are inventory checker and now is the end of business day")
                 print("ALERT: Please perform stock-taking")
                 stock_taking(role)
 
-            # If user is purchaser and the time is end of business day
+            # If user is purchaser and the time is end of business day, execute stock taking automatically
             elif role=="purchaser" and int(datetime.now().strftime("%H"))>=20:
                 print("\nYou are purchaser and now is the end of business day")
                 print("ALERT: Please view replenish list")

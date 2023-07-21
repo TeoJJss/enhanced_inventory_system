@@ -1,10 +1,7 @@
 from helpers.helper import inventory_data_list
 
+# Stock taking - confirm and change quantity of items
 def stock_taking(role:str) -> None:
-    # Assume item code's format is 5-digit numbers and unique
-    # Assume that "inventory.txt" is placed in the same directory as this file
-    # Assume only item code can be accepted as input 
-
     #Initialize
     file_dir="inventory.csv" #Locates text file directory
     access_allowed=("admin","inventory-checker") # Only admin and inventory-checker can perform stock-taking
@@ -66,11 +63,8 @@ def stock_taking(role:str) -> None:
 
     print("EXIT Stock-taking")
 
+# Stock replenishment - Add newly purchased items (increase quantity in stock)
 def stock_replenishment(role:str) -> None:
-    # Assume item code's format is 5-digit numbers and unique
-    # Assume that "inventory.txt" is placed in the same directory as this file
-    # Assume only item code can be accepted as input 
-
     #Initialize
     file_dir="inventory.csv" #Locates text file directory
     access_allowed=("admin","purchaser") # Only admin and purchaser can perform stock-replenishment
@@ -131,6 +125,7 @@ def stock_replenishment(role:str) -> None:
 
     print("EXIT Stock-replenmishment")
 
+# View insufficient items
 def view_replenish_list(role:str) -> None:
     # Initialization
     access_allowed=("admin", "purchaser") # Only admin and purchaser can acceess
@@ -154,9 +149,8 @@ def view_replenish_list(role:str) -> None:
         input("Type any character to exit after finish reading: ")
     print("Exit view replenish list")
 
+# Search for items in the record
 def search_items(role:str) -> None:
-    # Assume that "inventory.txt" is placed in the same directory as this file
-
     #Initialize
     access_allowed=("admin","inventory-checker", "purchaser") # Only admin and inventory checker can search items
     data_ls=[]

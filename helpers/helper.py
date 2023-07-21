@@ -1,9 +1,7 @@
 import pandas as pd
 
+# Login authentication to user
 def user_authentication() -> str:
-    # Assume "userdata.txt" is placed in the same directory as code file
-    # Assume that credentials in "userdata.txt" are correct
-
     # Initialize
     filename="userdata.csv"
     credentials=username=password=""
@@ -27,6 +25,7 @@ def user_authentication() -> str:
         else:
             print("Authentication failed! Incorrect password or username, please login again.")
 
+# Read the records in the CSV
 def inventory_data_list() -> list:
     df=pd.read_csv('inventory.csv').astype(str)
 
