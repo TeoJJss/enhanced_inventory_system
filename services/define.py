@@ -86,7 +86,12 @@ def insert_item(role:str) -> None:
                 continue # If user want to continue add other items, loop again
             else: # If user doesn't want to add other items
                 new_df=pd.DataFrame(datalist)
+                num_rows_before = int(new_df.shape[0])
+                duplicates = new_df.duplicated(subset=['Code'], keep='first')
+                new_df=new_df[~duplicates]
+                num_rows_after = int(new_df.shape[0])
                 new_df.to_csv(file_dir, mode='a', index=False, header=False)
+                print("Skip duplicated items:", num_rows_before-num_rows_after)
                 print("Insert new items successfully! ")
                 break # Return back to main menu after finish adding items
 

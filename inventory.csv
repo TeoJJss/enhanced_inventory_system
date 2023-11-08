@@ -1,7 +1,9 @@
 Code,Description,Category,Unit,Price,Quantity,Minimum
 10001,Chicken,Food,box,30.0,25,30
 20000,Beef 200g,Freezer,Pack,20.0,19,7
-11000,Milk 1L,Dairy,box,7.0,30,35
+11000,Milk 0.5L,Dairy,box,7.0,30,35
 21000,Chicken thigh,Freezer,Pieces,10.0,15,5
 30000,big Apple,Fruits,Pieces,2.0,50,30
-31000,Orange,Fruits,pieces,2.5,52,30
+10011,Milk 1L,Dairy,box,7.0,30,35
+10022,Milk 2L,Dairy,box,7.0,30,35
+10055,Milk 5L,Dairy,box,7.0,30,35
